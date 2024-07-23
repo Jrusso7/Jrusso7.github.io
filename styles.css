@@ -1,0 +1,92 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+header {
+    padding: 20px;
+    text-align: left;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+.subtitle {
+    margin-top: 5px;
+    font-size: 1.2em;
+    color: #777;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+section#intro {
+    max-width: 600px;
+}
+
+footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    margin-right: 10px;
+    color: #333;
+}
+
+.theme-toggle button:hover {
+    text-decoration: underline;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.dark-mode nav ul li a {
+    color: #f5f5f5;
+}
+
+.dark-mode .theme-toggle button {
+    color: #f5f5f5;
+}
