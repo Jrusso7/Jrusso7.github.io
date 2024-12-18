@@ -159,19 +159,13 @@ section#intro {
     max-width: 600px;
 }
 
-footer {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.social-links a {
+footer .social-links a {
     margin: 0 10px;
+    font-size: 1.5em;
     color: #333;
-    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-    text-decoration: underline;
+footer .social-links a:hover {
+    color: #00bcd4;
 }
