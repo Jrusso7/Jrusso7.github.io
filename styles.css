@@ -63,6 +63,11 @@ h2::after {
     color: #00bcd4;
 }
 
+.navbar ul li a.active {
+    color: #00bcd4;
+    font-weight: bold;
+}
+
 #hero {
     height: 100vh;
     background: url('images/croatia_view.jpg') no-repeat center center/cover;
