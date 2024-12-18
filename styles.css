@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    animation: fadeIn 0.8s ease-in;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -219,4 +223,13 @@ footer .social-links a {
 
 footer .social-links a:hover {
     color: #00bcd4;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
