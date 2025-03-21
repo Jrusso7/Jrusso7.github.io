@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Jordan Russo</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- SEO & Social Sharing -->
+<!--     <meta name="description" content="Learn more about Jordan Russo, a Data Analyst passionate about data science and technology."> -->
+<!--     <meta property="og:title" content="About Jordan Russo"> -->
+<!--     <meta property="og:description" content="Explore Jordan Russo’s background, skills, and interests in data analytics and technology."> -->
+<!--     <meta property="og:image" content="images/profile.jpg"> -->
+<!--     <meta property="og:type" content="website"> -->
 </head>
 <body>
     <div class="container">
@@ -12,28 +20,42 @@
             <h1>About Me</h1>
             <p class="subtitle">A Little About Myself</p>
         </header>
+        
         <nav class="navbar">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="work.html">Work History</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" aria-label="Go to Home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="projects.html" aria-label="View Projects"><i class="fas fa-tasks"></i> Projects</a></li>
+                <li><a href="about.html" class="active" aria-label="Learn About Me"><i class="fas fa-user"></i> About Me</a></li>
+                <li><a href="work.html" aria-label="View Work History"><i class="fas fa-briefcase"></i> Work History</a></li>
+                <li><a href="education.html" aria-label="View Education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="contact.html" aria-label="Contact Me"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
+        
         <main>
             <section id="about-content">
                 <h2>Who I Am</h2>
+                <img src="images/profile.jpg" alt="Jordan Russo" class="profile-pic">
                 <p>Hi, I’m Jordan Russo, a Data Analyst passionate about learning new technologies and solving challenging problems...</p>
-                <!-- Add more content here -->
+
+                <h3>Skills & Expertise</h3>
+                <ul>
+                    <li>SQL & Data Analysis</li>
+                    <li>Python & Machine Learning</li>
+                    <li>Power BI & Data Visualization</li>
+                    <li>Software Development</li>
+                </ul>
+
+                <h3>Outside of Work</h3>
+                <p>When I’m not working, I enjoy traveling, spending time with family, and learning about AI & machine learning.</p>
             </section>
         </main>
+
         <footer>
             <p>&copy; 2024 Jordan Russo</p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/jordanpatrickrusso" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Jrusso7" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/jordanpatrickrusso" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Jrusso7" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
         </footer>
     </div>
