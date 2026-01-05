@@ -6,6 +6,14 @@ body {
     animation: fadeIn 0.8s ease-in;
 }
 
+.profile-pic {
+    display: block;              /* allows margin auto to work */
+    max-width: 200px;            /* adjust size as needed */
+    width: 100%;                 /* keeps it responsive */
+    margin: 30px auto;           /* space above & below + center */
+    border-radius: 50%;          /* optional: circular profile pic */
+}
+
 body, html {
     background-size: cover;
     font-family: 'Arial', sans-serif;
@@ -25,15 +33,6 @@ body, html {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.profile-pic {
-    display: block;              /* allows margin auto to work */
-    max-width: 200px;            /* adjust size as needed */
-    width: 100%;                 /* keeps it responsive */
-    margin: 30px auto;           /* space above & below + center */
-    border-radius: 50%;          /* optional: circular profile pic */
-}
-
 
 h2 {
     text-align: center;
