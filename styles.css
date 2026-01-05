@@ -6,14 +6,6 @@ body {
     animation: fadeIn 0.8s ease-in;
 }
 
-profile-pic {
-    display: block;              /* allows margin auto to work */
-    max-width: 200px;            /* adjust size as needed */
-    width: 100%;                 /* keeps it responsive */
-    margin: 30px auto;           /* space above & below + center */
-    border-radius: 50%;          /* optional: circular profile pic */
-}
-
 body, html {
     background-size: cover;
     font-family: 'Arial', sans-serif;
