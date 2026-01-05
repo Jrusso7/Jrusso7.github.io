@@ -238,6 +238,44 @@ main {
     text-align: left;
 }
 
+#contact-content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.contact-form {
+    max-width: 450px;        /* keeps it readable */
+    margin: 30px auto 0;     /* centers the form */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;               /* consistent spacing */
+    text-align: left;        /* labels align nicely */
+}
+
+.contact-form label {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    align-self: flex-start;  /* keeps button clean, not stretched */
+}
+
+
 footer .social-links a {
     margin: 0 10px;
     font-size: 1.5em;
