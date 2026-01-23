@@ -1,5 +1,3 @@
-const axios = require("axios");
-
 exports.handler = async (event) => {
   const allowedOrigin = "https://Jrusso7.github.io"; // <-- your GitHub Pages URL
 
@@ -63,11 +61,19 @@ exports.handler = async (event) => {
       },
     };
 
-    const response = await axios.post(
+    const response = await fetch(
       "https://api.emailjs.com/api/v1.0/email/send",
-      data,
-      { headers: { "Content-Type": "application/json" } }
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }
     );
+
+    if (!response.ok) {
+      throw new Error(`EmailJS error: ${response.status}`);
+    }
+
 
     return {
       statusCode: 200,
