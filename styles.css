@@ -44,13 +44,6 @@ h2::after {
 }
 
 .navbar {
-/*     position: sticky;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    z-index: 1000; */
-
     background-color: #222;
     padding: 15px 0;
     text-align: center;
@@ -70,7 +63,6 @@ h2::after {
 
 .navbar ul li a {
     text-decoration: none;
-/*     color: #fff; */
     color: white;
     font-size: 1.2em;
     transition: color 0.3s ease;
@@ -81,20 +73,7 @@ h2::after {
     color: #00bcd4;
 }
 
-/* .navbar ul li a:hover {
-    color: #00bcd4;
-}
-
-.navbar ul li a.active {
-    color: #00bcd4;
-    font-weight: bold;
-} */
-
 #hero {
-/*     height: 100vh; */
-/*     background: url('images/croatia_view.jpg') no-repeat center center/cover; */
-/*     position: relative; */
-/*     color: #fff; */
     display: none;
 }
 
