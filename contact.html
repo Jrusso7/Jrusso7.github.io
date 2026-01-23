@@ -24,7 +24,7 @@
             </ul>
         </nav>
         <main>
-            <section id="contact-content">
+            <!-- <section id="contact-content">
                 <h2>Contact Me</h2>
                 <form action="#" method="POST">
                     <label for="name">Name:</label>
@@ -38,6 +38,43 @@
 
                     <button type="submit" class="btn">Send Message</button>
                 </form>
+            </section> -->
+            <section class="contact">
+              <div class="contact-card">
+                <h1>Get in Touch</h1>
+                <p class="subtitle">Feel free to reach out — I’ll get back to you soon.</p>
+            
+                <form id="contact-form">
+                  <div class="form-grid">
+                    <div>
+                      <label for="first-name">First Name</label>
+                      <input type="text" id="first-name" name="first_name" required>
+                    </div>
+            
+                    <div>
+                      <label for="last-name">Last Name</label>
+                      <input type="text" id="last-name" name="last_name" required>
+                    </div>
+            
+                    <div>
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" required>
+                    </div>
+            
+                    <div>
+                      <label for="phone">Phone (optional)</label>
+                      <input type="tel" id="phone" name="phone">
+                    </div>
+            
+                    <div class="full">
+                      <label for="message">Message</label>
+                      <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                  </div>
+            
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
             </section>
         </main>
         <footer>
