@@ -238,41 +238,83 @@ main {
     text-align: left;
 }
 
-#contact-content {
-    text-align: center;
-    padding: 40px 20px;
+.contact {
+  background: #03a9f4;
+  padding: 6rem 1rem;
 }
 
-.contact-form {
-    max-width: 450px;        /* keeps it readable */
-    margin: 30px auto 0;     /* centers the form */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;               /* consistent spacing */
-    text-align: left;        /* labels align nicely */
+.contact-card {
+  background: #fff;
+  max-width: 800px;
+  margin: auto;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.contact-form label {
-    font-weight: 500;
-    font-size: 0.95rem;
+.contact h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 10px 12px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: inherit;
+.subtitle {
+  color: #888;
+  margin-bottom: 2rem;
 }
 
-.contact-form textarea {
-    resize: vertical;
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
-.contact-form button {
-    margin-top: 15px;
-    align-self: flex-start;  /* keeps button clean, not stretched */
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #eee;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #03a9f4;
+}
+
+button {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #03a9f4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0381fe;
+}
+
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 
