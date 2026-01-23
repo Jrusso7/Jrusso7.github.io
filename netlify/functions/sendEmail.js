@@ -1,5 +1,5 @@
 exports.handler = async (event) => {
-  const allowedOrigin = "https://Jrusso7.github.io"; // <-- your GitHub Pages URL
+  const allowedOrigin = "https://www.jordanprusso.com"; // <-- your GitHub Pages URL
 
   // Handle CORS preflight
   if (event.httpMethod === "OPTIONS") {
