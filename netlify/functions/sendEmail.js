@@ -70,9 +70,19 @@ exports.handler = async (event) => {
       }
     );
 
+    // 👇 read response body as text
+    const responseText = await response.text();
+    
+    console.log("EmailJS status:", response.status);
+    console.log("EmailJS response body:", responseText);
+    
     if (!response.ok) {
-      throw new Error(`EmailJS error: ${response.status}`);
+      throw new Error(`EmailJS error ${response.status}: ${responseText}`);
     }
+
+    // if (!response.ok) {
+    //   throw new Error(`EmailJS error: ${response.status}`);
+    // }
 
 
     return {
