@@ -66,8 +66,44 @@
   background: #0381fe;
 }
 
+/* --- Minimal modal styles (Bootstrap-free) --- */
 .modal {
-  all: revert;
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-dialog {
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.modal-header,
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 @media (max-width: 700px) {
