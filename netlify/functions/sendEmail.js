@@ -35,6 +35,7 @@ exports.handler = async (event) => {
     } = JSON.parse(event.body);
 
     const now = new Date();
+    const fullName = `${first_name} ${last_name}`;
     const estTime = now.toLocaleString("en-US", {
       timeZone: "America/New_York",
       weekday: "long",
@@ -52,8 +53,7 @@ exports.handler = async (event) => {
       user_id: process.env.EMAILJS_PUBLIC_KEY,
       accessToken: process.env.EMAILJS_PRIVATE_KEY,
       template_params: {
-        first_name,
-        last_name,
+        name: fullName,
         email,
         phone,
         message,
