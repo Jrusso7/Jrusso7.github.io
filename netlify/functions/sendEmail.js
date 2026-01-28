@@ -78,11 +78,13 @@ exports.handler = async (event) => {
         body: JSON.stringify({
           secret: process.env.TURNSTILE_SECRET_KEY,
           response: token,
+          remoteip: event.headers["x-forwarded-for"]?.split(",")[0],
         }),
       }
     );
     
     const verifyData = await verifyResponse.json();
+    console.log("Turnstile verify response:", verifyData);
     
     if (!verifyData.success) {
       return {
