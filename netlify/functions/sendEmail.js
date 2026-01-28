@@ -36,6 +36,12 @@ exports.handler = async (event) => {
       company,
     } = JSON.parse(event.body);
 
+    console.log("Incoming body:", {
+      hasToken: !!token,
+      tokenLength: token?.length,
+      company,
+    });
+
     // Honeypot check (silently drop bots)
     if (company) {
       return {
