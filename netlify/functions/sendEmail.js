@@ -71,21 +71,10 @@ exports.handler = async (event) => {
         body: JSON.stringify(data),
       }
     );
-
-    // 👇 read response body as text
-    const responseText = await response.text();
-    
-    console.log("EmailJS status:", response.status);
-    console.log("EmailJS response body:", responseText);
     
     if (!response.ok) {
       throw new Error(`EmailJS error ${response.status}: ${responseText}`);
     }
-
-    // if (!response.ok) {
-    //   throw new Error(`EmailJS error: ${response.status}`);
-    // }
-
 
     return {
       statusCode: 200,
