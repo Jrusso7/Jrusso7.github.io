@@ -61,8 +61,13 @@ exports.handler = async (event) => {
       },
     };
 
-    // console.log("PUBLIC KEY:", process.env.EMAILJS_PUBLIC_KEY);
-
+    console.log(
+      "PRIVATE KEY PRESENT:",
+      !!process.env.EMAILJS_PRIVATE_KEY,
+      "LENGTH:",
+      process.env.EMAILJS_PRIVATE_KEY?.length
+    );
+    
     const response = await fetch(
       "https://api.emailjs.com/api/v1.0/email/send",
       {
