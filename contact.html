@@ -185,8 +185,15 @@
   });
 
     function closeModal() {
-      document.getElementById("successModal").classList.remove("show");
+      const modal = document.getElementById("successModal");
+      modal.classList.remove("show");
+    
+      // Reset Cloudflare Turnstile
+      if (window.turnstile) {
+        turnstile.reset();
+      }
     }
+
 </script>
 <script
   src="https://challenges.cloudflare.com/turnstile/v0/api.js"
