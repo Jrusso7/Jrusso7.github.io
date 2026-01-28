@@ -32,7 +32,21 @@ exports.handler = async (event) => {
       email,
       phone,
       message,
+      token,
+      company,
     } = JSON.parse(event.body);
+
+    // Honeypot check (silently drop bots)
+    if (company) {
+      return {
+        statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": allowedOrigin,
+        },
+        body: JSON.stringify({ success: true }),
+      };
+    }
+
 
     const now = new Date();
     const fullName = `${first_name} ${last_name}`;
@@ -46,6 +60,33 @@ exports.handler = async (event) => {
       minute: "2-digit",
       hour12: true,
     });
+
+    // Verify Cloudflare Turnstile token
+    const verifyResponse = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          secret: process.env.TURNSTILE_SECRET_KEY,
+          response: token,
+        }),
+      }
+    );
+    
+    const verifyData = await verifyResponse.json();
+    
+    if (!verifyData.success) {
+      return {
+        statusCode: 403,
+        headers: {
+          "Access-Control-Allow-Origin": allowedOrigin,
+        },
+        body: JSON.stringify({ error: "CAPTCHA verification failed" }),
+      };
+    }
 
     const data = {
       service_id: process.env.EMAILJS_SERVICE_ID,
@@ -73,7 +114,7 @@ exports.handler = async (event) => {
     );
     
     if (!response.ok) {
-      throw new Error(`EmailJS error ${response.status}: ${responseText}`);
+      throw new Error(`EmailJS error ${response.status}`);
     }
 
     return {
