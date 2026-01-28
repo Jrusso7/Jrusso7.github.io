@@ -51,7 +51,7 @@ exports.handler = async (event) => {
       service_id: process.env.EMAILJS_SERVICE_ID,
       template_id: process.env.EMAILJS_TEMPLATE_ID,
       user_id: process.env.EMAILJS_PUBLIC_KEY,
-      // accessToken: process.env.EMAILJS_PRIVATE_KEY,
+      accessToken: process.env.EMAILJS_PRIVATE_KEY, // Private key (STRICT MODE)
       template_params: {
         name: fullName,
         email,
@@ -60,13 +60,6 @@ exports.handler = async (event) => {
         time: estTime,
       },
     };
-
-    console.log(
-      "PRIVATE KEY PRESENT:",
-      !!process.env.EMAILJS_PRIVATE_KEY,
-      "LENGTH:",
-      process.env.EMAILJS_PRIVATE_KEY?.length
-    );
     
     const response = await fetch(
       "https://api.emailjs.com/api/v1.0/email/send",
@@ -74,8 +67,7 @@ exports.handler = async (event) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${process.env.EMAILJS_PRIVATE_KEY}`,
-      },
+        },
         body: JSON.stringify(data),
       }
     );
