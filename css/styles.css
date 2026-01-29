@@ -43,6 +43,19 @@ h2::after {
     margin: 10px auto 0;
 }
 
+.education-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.education-title img {
+  height: 30px;
+  width: auto;
+  opacity: 0.9;
+}
+
+
 .navbar {
     background-color: #222;
     padding: 15px 0;
