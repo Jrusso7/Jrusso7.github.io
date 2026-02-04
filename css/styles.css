@@ -153,12 +153,12 @@ h2::after {
     background-color: #008ba3;
 }
 
-.project-grid {
+/* .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 20px;
-}
+} */
 
 .project-card {
     background-color: #fff;
@@ -170,6 +170,12 @@ h2::after {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project {
+    margin-bottom: 4rem;
 }
 
 .project-card:hover {
@@ -216,6 +222,32 @@ h2::after {
 .project-card a:hover {
     background-color: #008ba3;
     transform: scale(1.05);
+}
+
+.project-findings {
+    max-width: 900px;
+    margin: 1.5rem auto 0;
+    padding: 1.25rem 1.5rem;
+    background-color: #f7f9fb;
+    border-left: 4px solid #00bcd4;
+    border-radius: 6px;
+    color: #444;
+}
+
+.project-findings h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.project-findings ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.project-findings li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
 }
 
 .container {
