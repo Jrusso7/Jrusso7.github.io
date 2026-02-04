@@ -250,6 +250,12 @@ h2::after {
     line-height: 1.5;
 }
 
+.project-source {
+    margin-top: 1rem;
+    font-size: 0.9em;
+    color: #666;
+}
+
 .container {
     display: flex;
     flex-direction: column;
