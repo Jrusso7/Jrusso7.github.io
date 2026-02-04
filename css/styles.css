@@ -160,6 +160,11 @@ h2::after {
     margin-top: 20px;
 } */
 
+.skill-label {
+    font-weight: 600;   /* lighter than bold */
+    color: #333;
+}
+
 .project-card {
     background-color: #fff;
     border-radius: 8px;
