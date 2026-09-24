@@ -113,6 +113,8 @@
 <script>
 
   const form = document.getElementById("contact-form");
+  
+  const formLoaded = Date.now();
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -136,7 +138,8 @@
       phone: phone.value.trim(),
       message: message.value.trim(),
       token,
-      company: honeypot
+      company: honeypot,
+      formLoadedAt: formLoaded
     };
 
     try {
