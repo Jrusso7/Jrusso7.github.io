@@ -57,16 +57,15 @@ exports.handler = async (event) => {
 
     const elapsedTime = Date.now() - formLoadedAt;
 
-    // Minimum submission time
-    if (elapsedTime < 5000) {
+    if (!Number.isFinite(formLoadedAt) || elapsedTime < 5000) {
       return {
         statusCode: 200,
         headers: {
           "Access-Control-Allow-Origin": allowedOrigin,
-      },
-      body: JSON.stringify({ success: true }),
-    };
-  }
+        },
+        body: JSON.stringify({ success: true }),
+      };
+    }
 
 
 
