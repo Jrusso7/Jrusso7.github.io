@@ -14,9 +14,6 @@ exports.handler = async (event) => {
     };
   }
 
-  const formLoadedAt = Date.now();
-  const elapsed = Date.now() - formLoadedAt;
-
   // Allow POST only
   if (event.httpMethod !== "POST") {
     return {
@@ -37,12 +34,14 @@ exports.handler = async (event) => {
       message,
       token,
       company,
+      formLoadedAt
     } = JSON.parse(event.body);
 
     console.log("Incoming body:", {
       hasToken: !!token,
       tokenLength: token?.length,
       company,
+      formLoadedAt
     });
 
     // Honeypot check (silently drop bots)
@@ -55,6 +54,8 @@ exports.handler = async (event) => {
         body: JSON.stringify({ success: true }),
       };
     }
+
+    const elapsedTime = Date.now() - formLoadedAt;
 
     // Minimum submission time
     if (elapsedTime < 5000) {
