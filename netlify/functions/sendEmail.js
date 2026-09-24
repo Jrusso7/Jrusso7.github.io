@@ -14,6 +14,9 @@ exports.handler = async (event) => {
     };
   }
 
+  const formLoadedAt = Date.now();
+  const elapsed = Date.now() - formLoadedAt;
+
   // Allow POST only
   if (event.httpMethod !== "POST") {
     return {
@@ -52,6 +55,18 @@ exports.handler = async (event) => {
         body: JSON.stringify({ success: true }),
       };
     }
+
+    // Minimum submission time
+    if (elapsedTime < 5000) {
+      return {
+        statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": allowedOrigin,
+      },
+      body: JSON.stringify({ success: true }),
+    };
+  }
+
 
 
     const now = new Date();
